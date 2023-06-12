@@ -40,17 +40,15 @@ export class CreateComponent implements OnInit {
     .map((checked: any, i: any) => checked ? this.technologies[i] : null)
     .filter((v:string) => v !== null);
     
-    //  this.formData = this.userForm.value; // Assign form data to formData property
 
     const modelref = this.modalService.open(ModalCompComponent);
     this.modalData = this.userForm.value;
     this.modalData.url = this.selectedFile;
     this.modalData.technology = this.selectedOrderIds;
-    // this.formData = this.modalData;
+  
     modelref.componentInstance.data = this.modalData;
 
-     //console.log(this.userForm.value)
-     //this.modalService.open();
+     
      
  }
 userdata:any;
